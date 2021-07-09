@@ -1,15 +1,18 @@
 export class Cell {
     alive: boolean;
-    neighbours: number;
+    neighbors: number;
 
-    constructor(alive: boolean) {
+    constructor(alive: boolean, neighbors: number) {
         this.alive = alive
-        this.neighbours = 0
+        this.neighbors = neighbors
     }
 
     step() {
-        if (this.neighbours === 0) {
+        if (this.neighbors === 0) {
             this.alive = false
+        }
+        if (this.neighbors === 3) {
+            this.alive = true
         }
     }
 }
