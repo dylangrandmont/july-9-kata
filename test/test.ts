@@ -58,7 +58,7 @@ describe("single cell", () => {
 });
 
 describe("Cell grid", () => {
-  it("2x2", () => {
+  it("2x2 all alive", () => {
     const cellGrid = new CellGrid([
       [true, true],
       [true, true],
@@ -66,6 +66,17 @@ describe("Cell grid", () => {
 
     const expectedGrid = [[true, true], [true, true]];
 
-    expect()
+    expect(cellGrid.grid).deep.equals(expectedGrid)
+  });
+
+  it("2x2 all alive", () => {
+    const cellGrid = new CellGrid([
+      [false, false],
+      [true, true],
+    ]);
+
+    const expectedGrid = [[false, false], [false, false]];
+
+    expect(cellGrid.grid).deep.equals(expectedGrid)
   });
 });
