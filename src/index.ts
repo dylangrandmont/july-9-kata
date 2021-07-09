@@ -1,3 +1,5 @@
-export function foo() {}
+export class Cell {
+    constructor(alive: Boolean) {
 
-export class Bar {}
+    }
+}

@@ -1,7 +1,10 @@
 import { expect } from "chai";
 
-describe("something", () => {
-  it("does something", () => {
-    expect(true).is.true;
+describe("single cell", () => {
+  it("live cell with no neighbors dies", () => {
+    const cell = new Cell(true);
+    cell.step();
+
+    expect(cell.alive).is.false;
   });
 });
