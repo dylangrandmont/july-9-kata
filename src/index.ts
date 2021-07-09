@@ -8,11 +8,14 @@ export class Cell {
     }
 
     step() {
-        if (this.neighbors === 0) {
+        if (this.neighbors < 2) {
             this.alive = false
         }
         if (this.neighbors === 3) {
             this.alive = true
+        }
+        if (this.neighbors > 3) {
+            this.alive = false
         }
     }
 }
