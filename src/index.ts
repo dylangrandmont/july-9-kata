@@ -20,3 +20,15 @@ export class Cell {
     }
 }
 
+export class CellGrid {
+    grid: boolean[][];
+
+    constructor(grid: boolean[][]) {
+        this.grid = grid;
+    }
+}
+//Grid:
+// which cell on which position
+// takes grid, steps through
+
+//make simple board, populate, make expected state of board

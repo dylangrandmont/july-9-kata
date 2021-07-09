@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Cell } from '../src'
+import { Cell, CellGrid } from '../src'
 
 describe("single cell", () => {
   it("live cell with no neighbors dies", () => {
@@ -43,7 +43,7 @@ describe("single cell", () => {
       it(`with ${neighbors} neighbors stay dead`, () => {
         const cell = new Cell(false, 3);
         cell.step();
-  
+
         expect(cell.alive).is.true;
       })
     })
@@ -57,4 +57,15 @@ describe("single cell", () => {
   });
 });
 
+describe("Cell grid", () => {
+  it("2x2", () => {
+    const cellGrid = new CellGrid([
+      [true, true],
+      [true, true],
+    ]);
 
+    const expectedGrid = [[true, true], [true, true]];
+
+    expect()
+  });
+});
