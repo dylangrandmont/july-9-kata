@@ -28,15 +28,26 @@ describe("single cell", () => {
     cell.step();
 
     expect(cell.alive).is.true;
-  })
+  });
 
-  it("live cell with more than 3 live neighbors dies", () => {
-    const cell = new Cell(true, 4)
+  [4,5,6,7,8].forEach(neighbors => {
+    it(`live cell with ${neighbors} live neighbors dies`, () => {
+    const cell = new Cell(true, neighbors)
     cell.step()
     expect(cell.alive).is.false
+    })
   })
 
   describe("dead cells", () => {
+    [0,1,2,4,5,6,7,8].forEach(neighbors => {
+      it(`with ${neighbors} neighbors stay dead`, () => {
+        const cell = new Cell(false, 3);
+        cell.step();
+  
+        expect(cell.alive).is.true;
+      })
+    })
+
     it("with 3 live neighbors becomes alive", () => {
       const cell = new Cell(false, 3);
       cell.step();
@@ -45,3 +56,5 @@ describe("single cell", () => {
     })
   });
 });
+
+
